@@ -89,53 +89,7 @@ nav img{
 .fas {
     padding-right: 1rem;
 }
-.contact .row {
-    display: flex;
-    background-color: #fff;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-.contact .row .map {
-    flex: 1 1 45rem;
-    width: 100%;
-    object-fit: cover;
-}
-.contact .row form {
-    flex: 1 1 45rem;
-    padding: 5rem 2rem;
-    text-align: center;
-    
-}
-.contact .row form h3 {
-    /* text-transform: uppercase; */
-    /* font-size: 2rem; */
-    color: #333333;
-}
-.contact .row form .inputBox {
-    display: flex;
-    align-items:center;
-    margin: 2rem 0;
-    border:#960018;
-}
-.contact .row form .inputBox i {
-    color: #333333;
-    font-size: 1rem;
-    padding-left: 2rem;
-}
-.contact .row form .inputBox input {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    color: #333333;
-    text-transform: none;
-    background-color: none;
-}
 
-.contact .row form .inputBox .Konu input {
-
-    font-size: 2rem;
-
-}
 
 /* Navbar Start */
 .flex-container {
@@ -310,4 +264,10 @@ border: black;
     width: fit-content;
     height: fit-content;
     padding: 0.5rem;
+}
+
+/* form css */
+
+iframe {
+    max-width: 100%;
 }
