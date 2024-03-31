@@ -77,3 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Additional custom JavaScript can be added here
 });
+
+const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))
