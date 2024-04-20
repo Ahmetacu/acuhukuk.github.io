@@ -52,56 +52,34 @@ nav img{
 }
 
 .home {
-    background-size: cover; /* Cover the entire div */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    height: 31.25rem; /* Set a height */
-    width: 100%; /* Set a width */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 31.25rem;
+    width: 100%;
     justify-content: center;
     text-align: center;
     margin: 0;
 }
 
-/* Ekran genişliği 1400px veya daha fazla olan cihazlar için */
-@media (min-width: 1400px) {
-  .home {
-    background-image: url('/images/ist2-2048.jpg'); /* Büyük ekranlar için büyük resim */
-  }
-}
-
-/* Ekran genişliği 1200px ile 1399px arasında olan cihazlar için */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .home {
-    background-image: url('/images/ist2-1872.jpg');
-  }
-}
-
-/* Ekran genişliği 1000px ile 1199px arasında olan cihazlar için */
-@media (min-width: 1000px) and (max-width: 1199px) {
-  .home {
-    background-image: url('/images/ist2-1650.jpg');
-  }
-}
-
-/* Ekran genişliği 780px ile 999px arasında olan cihazlar için */
-@media (min-width: 780px) and (max-width: 999px) {
-  .home {
-    background-image: url('/images/ist2-1392.jpg');
-  }
-}
-
-/* Ekran genişliği 580px ile 779px arasında olan cihazlar için */
-@media (min-width: 580px) and (max-width: 779px) {
-  .home {
-    background-image: url('/images/ist2-1116.jpg');
-  }
-}
-
-/* Ekran genişliği 580px'ten küçük cihazlar için */
+/* Artan ekran genişliğine göre arka plan resmi ayarı */
 @media (max-width: 579px) {
-  .home {
-    background-image: url('/images/ist2-696.jpg'); /* Küçük ekranlar için küçük resim */
-  }
+    .home { background-image: url('/images/ist2-696.jpg'); }
+}
+@media (min-width: 580px) {
+    .home { background-image: url('/images/ist2-1116.jpg'); }
+}
+@media (min-width: 780px) {
+    .home { background-image: url('/images/ist2-1392.jpg'); }
+}
+@media (min-width: 1000px) {
+    .home { background-image: url('/images/ist2-1650.jpg'); }
+}
+@media (min-width: 1200px) {
+    .home { background-image: url('/images/ist2-1872.jpg'); }
+}
+@media (min-width: 1400px) {
+    .home { background-image: url('/images/ist2-2048.jpg'); }
 }
   .home p{
     color: #384782;
