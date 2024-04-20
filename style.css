@@ -42,22 +42,22 @@ nav img{
 
 /* Artan ekran genişliğine göre arka plan resmi ayarı */
 @media (max-width: 579px) {
-    .home { background-image: url('/images/ist2-696.jpg'); }
+    .home { background-image: url('/images/ist2-696.webp'); }
 }
 @media (min-width: 580px) {
-    .home { background-image: url('/images/ist2-1116.jpg'); }
+    .home { background-image: url('/images/ist2-1116.webp'); }
 }
 @media (min-width: 780px) {
-    .home { background-image: url('/images/ist2-1392.jpg'); }
+    .home { background-image: url('/images/ist2-1392.webp'); }
 }
 @media (min-width: 1000px) {
-    .home { background-image: url('/images/ist2-1650.jpg'); }
+    .home { background-image: url('/images/ist2-1650.webp'); }
 }
 @media (min-width: 1200px) {
-    .home { background-image: url('/images/ist2-1872.jpg'); }
+    .home { background-image: url('/images/ist2-1872.webp'); }
 }
 @media (min-width: 1400px) {
-    .home { background-image: url('/images/ist2-2048.jpg'); }
+    .home { background-image: url('/images/ist2-2048.webp'); }
 }
   .home p{
     color: #384782;
