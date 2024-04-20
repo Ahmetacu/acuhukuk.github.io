@@ -53,3 +53,27 @@ function initSmoothScroll() {
         });
     });
 }
+function preloadImage(imagePath) {
+    var img = new Image();
+    img.src = imagePath;
+}
+
+function updateBackgroundPreload() {
+    if (window.innerWidth < 580) {
+        preloadImage('/images/ist2-696.jpg');
+    } else if (window.innerWidth < 780) {
+        preloadImage('/images/ist2-1116.jpg');
+    } else if (window.innerWidth < 1000) {
+        preloadImage('/images/ist2-1392.jpg');
+    } else if (window.innerWidth < 1200) {
+        preloadImage('/images/ist2-1650.jpg');
+    } else if (window.innerWidth < 1400) {
+        preloadImage('/images/ist2-1872.jpg');
+    } else {
+        preloadImage('/images/ist2-2048.jpg');
+    }
+}
+
+// Sayfa yüklenirken ve pencere boyutu değiştiğinde fonksiyonu çağır
+window.addEventListener('load', updateBackgroundPreload);
+window.addEventListener('resize', updateBackgroundPreload);
