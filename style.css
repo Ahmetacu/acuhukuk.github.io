@@ -3,39 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family:'Poppins', sans-serif;
+body, .poppins-thin, .poppins-light, .poppins-regular, .poppins-medium, .poppins-semibold {
+    font-family: 'Poppins', sans-serif;
 }
-.poppins-thin {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .poppins-light {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-medium {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
+
+.poppins-thin { font-weight: 100; }
+.poppins-light { font-weight: 300; }
+.poppins-regular { font-weight: 400; }
+.poppins-medium { font-weight: 500; }
+.poppins-semibold { font-weight: 600; }
 
 .container-fluid {
     padding-right: 0;
@@ -46,20 +22,22 @@ nav img{
     height: 55px;
 }
 
-.home .home-img img {
-    height: 600px;
-    width: 1800px;
-}
-
-.home {
+/* Home Section Styles */
+.home, .home .home-img img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.home {
     height: 31.25rem;
     width: 100%;
     justify-content: center;
     text-align: center;
     margin: 0;
+}
+.home .home-img img {
+    height: 600px;
+    width: 1800px;
 }
 
 /* Artan ekran genişliğine göre arka plan resmi ayarı */
@@ -87,7 +65,6 @@ nav img{
 
   .heading {
     color:black;
-    
     font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
