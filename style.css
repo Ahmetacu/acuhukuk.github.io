@@ -51,9 +51,7 @@ nav img{
     width: 1800px;
 }
 
-
 .home {
-    background-image: url('/images/ist2.jpg'); /* Path to your image */
     background-size: cover; /* Cover the entire div */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -62,8 +60,49 @@ nav img{
     justify-content: center;
     text-align: center;
     margin: 0;
-  }
+}
 
+/* Ekran genişliği 1400px veya daha fazla olan cihazlar için */
+@media (min-width: 1400px) {
+  .home {
+    background-image: url('/images/ist2-2048.jpg'); /* Büyük ekranlar için büyük resim */
+  }
+}
+
+/* Ekran genişliği 1200px ile 1399px arasında olan cihazlar için */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .home {
+    background-image: url('/images/ist2-1872.jpg');
+  }
+}
+
+/* Ekran genişliği 1000px ile 1199px arasında olan cihazlar için */
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .home {
+    background-image: url('/images/ist2-1650.jpg');
+  }
+}
+
+/* Ekran genişliği 780px ile 999px arasında olan cihazlar için */
+@media (min-width: 780px) and (max-width: 999px) {
+  .home {
+    background-image: url('/images/ist2-1392.jpg');
+  }
+}
+
+/* Ekran genişliği 580px ile 779px arasında olan cihazlar için */
+@media (min-width: 580px) and (max-width: 779px) {
+  .home {
+    background-image: url('/images/ist2-1116.jpg');
+  }
+}
+
+/* Ekran genişliği 580px'ten küçük cihazlar için */
+@media (max-width: 579px) {
+  .home {
+    background-image: url('/images/ist2-696.jpg'); /* Küçük ekranlar için küçük resim */
+  }
+}
   .home p{
     color: #384782;
   }
