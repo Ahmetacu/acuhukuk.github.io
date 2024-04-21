@@ -23,46 +23,103 @@ nav img{
 }
 
 /* Home Section Styles */
-.home, .home .home-img img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 .home {
-    height: 31.25rem;
     width: 100%;
-    justify-content: center;
     text-align: center;
     margin: 0;
-}
-.home .home-img img {
-    height: 600px;
-    width: 1800px;
+    margin-top: 0;
 }
 
-/* Artan ekran genişliğine göre arka plan resmi ayarı */
-@media (max-width: 579px) {
-    .home { background-image: url('/images/ist2-696.webp'); }
+.position-relative {
+    position: relative;
+    display: block;
 }
-@media (min-width: 580px) {
-    .home { background-image: url('/images/ist2-1116.webp'); }
-}
-@media (min-width: 780px) {
-    .home { background-image: url('/images/ist2-1392.webp'); }
-}
-@media (min-width: 1000px) {
-    .home { background-image: url('/images/ist2-1650.webp'); }
-}
-@media (min-width: 1200px) {
-    .home { background-image: url('/images/ist2-1872.webp'); }
-}
-@media (min-width: 1400px) {
-    .home { background-image: url('/images/ist2-2048.webp'); }
-}
-  .home p{
-    color: #384782;
+.hero img {
+    width: 100%;         /* Genişliği kapsayıcıya sığdır */
+    height: 100%;        /* Yüksekliği de kapsayıcıya sığdır */
+    object-fit: cover;   /* Kesme veya bozma olmadan kapsayıcıyı doldur */
+    object-position: center; /* Resmin ortasını kapsayıcının merkezine hizala */
   }
+  
 
+  .text-overlay {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #384782;
+    width: 90%; /* Adjusted width for better padding on smaller screens */
+    text-align: center;
+    padding: 0 5%; /* Add padding */
+}
+
+/* Large screens, typically desktops */
+@media (min-width: 1200px) {
+    .text-overlay h1 {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+    .text-overlay p  {
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium screens, typically tablets */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .text-overlay h1 {
+        font-size: 3rem;
+    }
+    .text-overlay p {
+        font-size: 1rem;
+    }
+    .text-overlay a {
+        font-size: 0.75rem;
+    }
+}
+
+/* Small screens, larger phones */
+@media (min-width: 576px) and (max-width: 767px) {
+    .text-overlay h1 {
+        font-size: 1.5rem;
+    }
+    .text-overlay p {
+        font-size: 0.75rem;
+    }
+    .text-overlay a {
+        font-size: 0.75rem;
+    }
+}
+
+/* Extra small screens, phones */
+@media (max-width: 575px) {
+    .text-overlay h1 {
+        font-size: 1rem;
+    }
+    .text-overlay p {
+        font-size: 0.40rem; 
+    }
+    .text-overlay a {
+        font-size: 0.40rem;
+    }
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #384782;
+        width: 90%; /* Adjusted width for better padding on smaller screens */
+        text-align: center;
+        padding: 0 5%; /* Add padding */
+    }
+}
+
+/* Consider adding padding to the sides on smaller screens for better readability */
+@media (max-width: 767px) {
+    .text-overlay {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
   .heading {
     color:black;
     font-size: 2rem;
