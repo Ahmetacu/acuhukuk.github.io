@@ -1,3 +1,13 @@
+
+/* Lazy-load sınıfı */
+.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+  
+  .lazy-loaded {
+    opacity: 1;
+  }
 * {
     margin: 0;
     padding: 0;
