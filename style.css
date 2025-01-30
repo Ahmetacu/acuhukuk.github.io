@@ -341,3 +341,66 @@ iframe {
     max-width: 100%;
 }
 
+/* Araçlar CSS */
+
+  /* Araç Değer Kaybı Hesaplayıcı */
+
+  
+  .arac {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arac h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .arac .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .arac label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .arac input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .arac  button {
+    background-color:  #384782;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .arac button:hover {
+    background-color: 0.1rem solid #384782;
+  }
+  
+  .arac .result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color:  #586ec7;
+    border: 1px solid #384782;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .aracmakale {
+    margin-left: 5%;
+  }

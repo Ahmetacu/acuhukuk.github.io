@@ -79,3 +79,33 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('load', updateBackgroundPreload);
   window.addEventListener('resize', updateBackgroundPreload);
   
+  // Araçlar JS
+  // Araç Değer Kaybı JS
+  function formatInput(input) {
+    const value = input.value.replace(/\D/g, "");
+    input.value = new Intl.NumberFormat('tr-TR').format(value);
+}
+
+function formatCurrency(value) {
+    return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(value).replace('TRY', '').trim();
+}
+
+function calculateDepreciation() {
+    const ageFactor = parseFloat(document.getElementById('age').value);
+    const marketValue = parseFloat(document.getElementById('marketValue').value.replace(/\./g, ''));
+    const mileageFactor = parseFloat(document.getElementById('mileage').value);
+    const damageRatio = parseFloat(document.getElementById('damageRatio').value) / 100;
+
+    if (!marketValue || !damageRatio) {
+        alert('Lütfen tüm alanları doldurun!');
+        return;
+    }
+
+    // Mevzuattaki formül uygulanıyor
+    const depreciation = marketValue * damageRatio * ageFactor * mileageFactor;
+
+    // Sonucu ekrana yazdır
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `<strong>Hesaplanan Tahmini Değer Kaybı:</strong> ${formatCurrency(depreciation)}`;
+}
