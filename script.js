@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateBackgroundPreload() {
     if (window.innerWidth < 580) {
-      preloadImage('/images/ist2-696.jpg');
+      preloadImage('/images/ist2-696.webp');
     } else if (window.innerWidth < 780) {
-      preloadImage('/images/ist2-1116.jpg');
+      preloadImage('/images/ist2-1116.webp');
     } else if (window.innerWidth < 1000) {
-      preloadImage('/images/ist2-1392.jpg');
+      preloadImage('/images/ist2-1392.webp');
     } else if (window.innerWidth < 1200) {
-      preloadImage('/images/ist2-1650.jpg');
+      preloadImage('/images/ist2-1650.webp');
     } else if (window.innerWidth < 1400) {
-      preloadImage('/images/ist2-1872.jpg');
+      preloadImage('/images/ist2-1872.webp');
     } else {
-      preloadImage('/images/ist2-2048.jpg');
+      preloadImage('/images/ist2-2048.webp');
     }
   }
   
@@ -109,3 +109,4 @@ function calculateDepreciation() {
     resultDiv.style.display = 'block';
     resultDiv.innerHTML = `<strong>Hesaplanan Tahmini Değer Kaybı:</strong> ${formatCurrency(depreciation)}`;
 }
+
