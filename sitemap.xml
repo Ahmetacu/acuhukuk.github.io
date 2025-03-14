@@ -11,81 +11,97 @@
   <loc>https://acuhukuk.av.tr/</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
   <priority>1.00</priority>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/ekibimiz/</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.90</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/kvkk.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/kvkke.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/ceza.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/sirketler.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/aile.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/hizmetlerimiz/arac.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/makaleler/yapay-zeka-hukuku.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/makaleler/telekominasyon.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://acuhukuk.av.tr/makaleler/H&amp;M-Karar%C4%B1.html</loc>
+  <loc>https://acuhukuk.av.tr/makaleler/H&amp;M-Kararı.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://acuhukuk.av.tr/makaleler/t%C3%BCketim-toplumunda-bili%C5%9Fim.html</loc>
+  <loc>https://acuhukuk.av.tr/makaleler/tüketim-toplumunda-bilişim.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://acuhukuk.av.tr/ara%C3%A7lar%C4%B1m%C4%B1z/ara%C3%A7degerkayb%C4%B1.html</loc>
+  <loc>https://acuhukuk.av.tr/araçlarımız/araçdegerkaybi.html</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://acuhukuk.av.tr/ileti%C5%9Fim/</loc>
+  <loc>https://acuhukuk.av.tr/iletişim/</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.90</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/makaleler/</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/gizlilik/</loc>
   <lastmod>2025-01-30T16:24:09+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.70</priority>
+  <changefreq>yearly</changefreq>
 </url>
 <url>
   <loc>https://acuhukuk.av.tr/index.html</loc>
