@@ -51,7 +51,84 @@
   
   <style>
     /* Critical CSS */
-    /* Font tanımlamaları */
+    /* Layout stability */
+    :root {
+      --hero-height: min(50vh, 558px);
+    }
+    
+    /* Hero styles */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: var(--hero-height);
+      overflow: hidden;
+      background-color: #f8f9fa; /* Placeholder renk */
+      aspect-ratio: 2/1;
+    }
+    
+    .hero picture {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #384782;
+      z-index: 1;
+      width: 90%;
+      max-width: 800px;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    /* Card styles */
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: 1/1.5;
+    }
+    
+    .card-img-top {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+    
+    .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-text {
+      flex: 1;
+    }
+
+    /* Container styles */
+    .container, .container-fluid {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /* Typography preload */
     @font-face {
       font-family: 'Poppins';
       font-style: normal;
@@ -61,33 +138,6 @@
            url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
     }
     
-    /* Fallback font stack */
-    body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    
-    /* Hero styles */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .text-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #384782;
-      z-index: 1;
-    }
-
     /* Navbar styles */
     .navbar {
       background-color: #fff !important;
@@ -232,26 +282,26 @@
   <!-- bilgi al section end -->
   <!-- Navbar section end -->
   <!-- Home section start -->
-  <div class="container-fluid">
-    <div class="row home ">
-      <div class="col position-relative mb-2 hero">
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <div class="col position-relative hero">
         <picture>
-          <source media="(min-width: 697px)" srcset="/images/ist2-1116.webp" width="1116" height="558">
+          <source media="(min-width: 697px)" 
+                  srcset="/images/ist2-1116.webp" 
+                  width="1116" 
+                  height="558">
           <img src="/images/ist2-696.webp" 
                width="696"
                height="348"
                fetchpriority="high"
                decoding="async"
-               alt="Ankara KVKK Avukatı"
-               style="width:100%;height:auto">
+               alt="Ankara KVKK Avukatı">
         </picture>
-    
-
         <div class="text-overlay">
-          <h1 class="display-1 display-lg-1"><strong>ACU Hukuk ve Danışmanlık</strong></h1>
-          <p class="h5 ">ACU Hukuk ve Danışmanlık avukatları olarak, müvekkillerimizin ihtiyaçları doğrultusunda en
+          <h1 class="display-1"><strong>ACU Hukuk ve Danışmanlık</strong></h1>
+          <p class="h5">ACU Hukuk ve Danışmanlık avukatları olarak, müvekkillerimizin ihtiyaçları doğrultusunda en
             hızlı ve etkili çözümleri üretiyoruz.</p>
-          <p class="h5 ">Müvekkillerimizin KVKK Uyum ve Danışmanlık süreçlerini A'dan Z'ye uzman avukatlarımızla
+          <p class="h5">Müvekkillerimizin KVKK Uyum ve Danışmanlık süreçlerini A'dan Z'ye uzman avukatlarımızla
             yürütüyoruz.</p>
           <a href="/iletişim/" class="btn btn-primary mt-3">Bizimle İletişime Geçin</a>
         </div>
@@ -451,19 +501,19 @@
   <!-- footer section end -->
   <!-- JavaScript yüklemeleri -->
   <script>
-    // Kritik olmayan JS'leri asenkron yükle
-    function loadScript(src) {
-      var script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      document.body.appendChild(script);
-    }
     // Sayfa yüklendikten sonra JS'leri yükle
     window.addEventListener('load', function() {
-      loadScript('https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js');
-      loadScript('https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js');
-      loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
-      loadScript('/script.js');
+      // Bootstrap JS'i yükle
+      var bootstrap = document.createElement('script');
+      bootstrap.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+      bootstrap.async = true;
+      document.body.appendChild(bootstrap);
+      
+      // Özel script'i yükle
+      var customScript = document.createElement('script');
+      customScript.src = '/script.js';
+      customScript.async = true;
+      document.body.appendChild(customScript);
     });
   </script>
 </body>
