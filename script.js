@@ -2,64 +2,118 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dropdown toggles and smooth scroll for links
     initDropdownToggles();
     initSmoothScroll();
-  });
-  
-  function initDropdownToggles() {
-    var dropdownToggles = document.querySelectorAll('.nav-item.dropdown .nav-link.dropdown-toggle');
-  
-    // Add click event listener to each toggle for dropdown functionality
-    dropdownToggles.forEach(function(toggle) {
-      toggle.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        var dropdown = this.parentElement; // Get parent element
-        var dropdownMenu = dropdown.querySelector('.dropdown-menu'); // Find dropdown menu
-        toggleDropdown(dropdownMenu); // Toggle dropdown visibility
-      });
+    initImagePreload();
+    
+    // Sayfa yüklendiğinde arka plan önbelleğe alınır
+    updateBackgroundPreload();
+    
+    // Performans için throttle ekleyelim
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        if (!resizeTimeout) {
+            resizeTimeout = setTimeout(function() {
+                resizeTimeout = null;
+                updateBackgroundPreload();
+            }, 250);
+        }
     });
+});
   
-    // Close all dropdowns when clicking outside of them
-    document.addEventListener('click', function(event) {
-      if (!event.target.matches('.nav-item.dropdown .nav-link.dropdown-toggle')) {
-        closeAllDropdowns();
-      }
-    });
-  }
+function initDropdownToggles() {
+    const dropdownToggles = document.querySelectorAll('.nav-item.dropdown .nav-link.dropdown-toggle');
   
-  function toggleDropdown(dropdownMenu) {
-    // Close any open dropdown menus
-    document.querySelectorAll('.nav-item.dropdown .dropdown-menu.show').forEach(function(openMenu) {
-      openMenu.classList.remove('show');
-    });
-    // Toggle the current dropdown menu
-    dropdownMenu.classList.toggle('show');
-  }
-  
-  function closeAllDropdowns() {
-    // Close all dropdown menus
-    document.querySelectorAll('.nav-item.dropdown .dropdown-menu.show').forEach(function(openMenu) {
-      openMenu.classList.remove('show');
-    });
-  }
-  
-  function initSmoothScroll() {
-    // Apply smooth scroll to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default anchor click behavior
-        // Smoothly scroll to the target element
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const dropdown = toggle.parentElement;
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            
+            // Close other dropdowns first
+            await closeAllDropdowns();
+            
+            // Then toggle the current one
+            dropdownMenu.classList.toggle('show');
         });
-      });
     });
-  }
   
-  function preloadImage(imagePath) {
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.matches('.nav-item.dropdown .nav-link.dropdown-toggle')) {
+            closeAllDropdowns();
+        }
+    });
+}
+  
+async function closeAllDropdowns() {
+    const openMenus = document.querySelectorAll('.nav-item.dropdown .dropdown-menu.show');
+    const promises = Array.from(openMenus).map(menu => {
+        return new Promise(resolve => {
+            menu.classList.remove('show');
+            // Give time for any animations to complete
+            setTimeout(resolve, 100);
+        });
+    });
+    await Promise.all(promises);
+}
+  
+function initSmoothScroll() {
+    document.querySelector('body').addEventListener('click', function(e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+}
+  
+function initImagePreload() {
+    const preloadImages = () => {
+        const width = window.innerWidth;
+        let imagePath;
+        
+        if (width < 580) {
+            imagePath = '/images/ist2-696.webp';
+        } else if (width < 780) {
+            imagePath = '/images/ist2-1116.webp';
+        } else if (width < 1000) {
+            imagePath = '/images/ist2-1392.webp';
+        } else if (width < 1200) {
+            imagePath = '/images/ist2-1650.webp';
+        } else if (width < 1400) {
+            imagePath = '/images/ist2-1872.webp';
+        } else {
+            imagePath = '/images/ist2-2048.webp';
+        }
+        
+        const img = new Image();
+        img.src = imagePath;
+        return img.decode(); // Returns a promise
+    };
+
+    // Debounce the resize event
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            preloadImages().catch(console.error);
+        }, 250);
+    });
+
+    // Initial load
+    preloadImages().catch(console.error);
+}
+  
+function preloadImage(imagePath) {
     var img = new Image();
     img.src = imagePath;
-  }
+}
   
-  function updateBackgroundPreload() {
+function updateBackgroundPreload() {
     if (window.innerWidth < 580) {
       preloadImage('/images/ist2-696.webp');
     } else if (window.innerWidth < 780) {
@@ -73,15 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       preloadImage('/images/ist2-2048.webp');
     }
-  }
+}
   
-  // Sayfa yüklenirken ve pencere boyutu değiştiğinde fonksiyonu çağır
-  window.addEventListener('load', updateBackgroundPreload);
-  window.addEventListener('resize', updateBackgroundPreload);
-  
-  // Araçlar JS
-  // Araç Değer Kaybı JS
-  function formatInput(input) {
+// Araçlar JS
+// Araç Değer Kaybı JS
+function formatInput(input) {
     const value = input.value.replace(/\D/g, "");
     input.value = new Intl.NumberFormat('tr-TR').format(value);
 }
