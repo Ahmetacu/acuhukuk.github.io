@@ -3,106 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Timing-Allow-Origin" content="*">
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
   
-  <!-- Performans optimizasyonları -->
+  <!-- Önbelleğe alma direktifleri -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://acuhukuk.av.tr" crossorigin>
+  
+  <!-- Kritik kaynakları önyükle -->
   <link rel="preload" 
         as="image" 
-        href="/images/ist2-1116.webp" 
-        type="image/webp"
+        href="/images/ist2-1116.avif" 
+        type="image/avif"
         fetchpriority="highest"
         media="(min-width: 697px)">
         
   <link rel="preload" 
         as="image" 
-        href="/images/ist2-696.webp" 
-        type="image/webp"
+        href="/images/ist2-696.avif" 
+        type="image/avif"
         fetchpriority="highest"
         media="(max-width: 696px)">
-        
-  <!-- DNS önyükleme -->
-  <link rel="preconnect" href="https://acuhukuk.av.tr">
-  <link rel="dns-prefetch" href="https://acuhukuk.av.tr">
+
+  <!-- SEO Meta Etiketleri -->
+  <meta name="description" content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur. KVKK, Ceza Hukuku, Aile Hukuku ve diğer alanlarda uzman kadromuzla hizmetinizdeyiz.">
+  <meta name="keywords" content="Ankara, Avukat, KVKK, Gayrimenkul, İnşaat Hukuku, Miras, Ticaret, İdare, Fikri Sinai Haklar, Aile, Ceza, Bilişim, Sağlık, Ulusal Uluslararası Hukuk, Sigorta, Rekabet, Kira, Vergi, İflas İcra, Dernekler Vakıflar, İş, İmar Hukuku">
+  <meta name="author" content="ACU Hukuk Bürosu">
+  <meta name="robots" content="index, follow">
   
-  <!-- Cache-Control başlığı -->
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
-  <meta http-equiv="Expires" content="31536000">
-  
-  <meta name="keywords"
-    content="Ankara, Avukat, KVKK, Gayrimenkul, İnşaat Hukuku, Miras, Ticaret, İdare, Fikri Sinai Haklar, Aile, Ceza, Bilişim, Sağlık, Ulusal Uluslararası Hukuk, Sigorta, Rekabet, Kira, Vergi, İflas İcra, Dernekler Vakıflar, İş, İmar Hukuku">
-  <meta name="DC.title" content="ACU Hukuk Bürosu | Ankara Avukat Danışmanlık">
   <title>ACU Hukuk Bürosu | Ankara Avukat</title>
-  <meta name="description"
-    content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur. Kurucusu Av. Yasin Ali Acu, 2020'de büroyu açmıştır.">
   <link rel="canonical" href="https://acuhukuk.av.tr/">
-  <link rel="alternate" hreflang="tr" href="https://acuhukuk.av.tr/">
-  <link rel="alternate" hreflang="x-default" href="https://acuhukuk.av.tr/">
+  
+  <!-- Sosyal Medya Meta Etiketleri -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://acuhukuk.av.tr">
+  <meta property="og:title" content="ACU Hukuk Bürosu | Ankara Avukat">
+  <meta property="og:description" content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur. Kurucusu Av. Yasin Ali Acu, 2020'de büroyu açmıştır.">
+  <meta property="og:image" content="https://acuhukuk.av.tr/images/social-share.jpg">
+  
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="manifest" href="/images/site.webmanifest">
-  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://acuhukuk.av.tr">
-  <meta property="og:title" content="ACU Hukuk Bürosu | Ankara Avukat">
-  <meta property="og:description"
-    content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur. Kurucusu Av. Yasin Ali Acu, 2020'de büroyu açmıştır.">
-  <meta property="og:image" content="https://acuhukuk.av.tr/images/social-share.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://acuhukuk.av.tr">
-  <meta name="twitter:title" content="ACU Hukuk Bürosu | Ankara Avukat">
-  <meta name="twitter:description"
-    content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur. Kurucusu Av. Yasin Ali Acu, 2020'de büroyu açmıştır.">
-  <meta name="twitter:image" content="https://acuhukuk.av.tr/images/social-share.jpg">
   
-  <!-- En kritik kaynakları önce yükle -->
-  <link rel="preload" as="image" href="/images/ist2-696.webp" fetchpriority="highest">
+  <!-- Font Optimizasyonu -->
+  <link rel="preload" 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+  </noscript>
   
   <!-- Kritik CSS -->
   <style>
-    /* Temel stil tanımlamaları */
     :root {
-      --hero-height: min(80vh, 558px);
+      --hero-height-desktop: 558px;
+      --hero-height-mobile: 348px;
       --primary-color: #384782;
+    }
+    
+    /* Font fallback */
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Arial');
     }
     
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    
+    .hero-container {
+      width: 100%;
+      height: var(--hero-height-desktop);
+      min-height: var(--hero-height-desktop);
+      overflow: hidden;
+      background: var(--primary-color);
+      contain: strict;
+      aspect-ratio: 2/1;
+    }
+    
+    @media (max-width: 696px) {
+      .hero-container {
+        height: var(--hero-height-mobile);
+        min-height: var(--hero-height-mobile);
+      }
     }
     
     .hero {
       position: relative;
       width: 100%;
-      height: var(--hero-height);
-      background: var(--primary-color);
-      contain: layout paint;
-      content-visibility: auto;
-      contain-intrinsic-size: 1px var(--hero-height);
-      will-change: transform;
-      transform: translateZ(0);
-    }
-    
-    .hero picture {
-      display: block;
       height: 100%;
+      contain: layout size paint style;
       transform: translateZ(0);
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
     
+    .hero picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
     .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       background: var(--primary-color);
       display: block;
-      contain: paint;
-      will-change: transform;
-      transform: translateZ(0);
     }
     
     .text-overlay {
@@ -113,22 +143,39 @@
       text-align: center;
       color: #fff;
       z-index: 1;
-      width: 90%;
-      max-width: 1000px;
+      width: min(90%, 1000px);
       padding: 2rem;
-      
+      pointer-events: none;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
+    
     .text-overlay h1 {
-      margin-top: 20%;
+      margin: 0;
+      padding-top: 1rem;
       font-size: clamp(2rem, 5vw, 4rem);
-
+      line-height: 1.2;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
 
     .text-overlay .h5 {
-      margin: 0 0 1rem;
+      margin: 1rem 0;
       font-size: clamp(1rem, 2vw, 1.25rem);
       line-height: 1.6;
-     
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .heading {
+      margin: 2rem 0;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1.2;
+      height: auto;
+      min-height: 48px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--primary-color);
     }
 
     .btn-primary {
@@ -141,6 +188,13 @@
       border: 1px solid var(--primary-color);
       font-weight: 500;
       margin-top: 1rem;
+      transform: translateZ(0);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: #fff;
+      color: var(--primary-color);
     }
     
     /* Navbar temel stilleri */
@@ -148,40 +202,41 @@
       background: #fff;
       padding: 1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Kart stilleri */
+    .card {
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      background: #f0f0f0;
     }
   </style>
 
-  <!-- Diğer kaynakları asenkron yükle -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'" fetchpriority="low">
-  <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'" fetchpriority="low">
+  <!-- Bootstrap CSS'i asenkron yükle -->
+  <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+        fetchpriority="low">
   
-  <!-- Font yüklemesini optimize et -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'" fetchpriority="low">
-  
-  <!-- Meta etiketleri -->
-  <meta name="description" content="ACU Hukuk ve Danışmanlık, Ankara'da hizmet veren bir avukatlık bürosudur.">
-  
-  <!-- Önbelleğe alma direktifleri -->
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  
-  <!-- Yedek font tanımı -->
-  <style>
-    @font-face {
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Arial');
-    }
-  </style>
-
-  <!-- Kritik kaynakları önyükle -->
-  <link rel="preload" as="style" href="/style.css">
-  <link rel="preload" as="script" href="/script.js">
+  <!-- Diğer CSS'i asenkron yükle -->
+  <link rel="stylesheet" 
+        href="/style.css" 
+        media="print" 
+        onload="this.media='all'" 
+        fetchpriority="low">
 </head>
 
 <body>
@@ -254,40 +309,63 @@
   <!-- bilgi al section end -->
   <!-- Navbar section end -->
   <!-- Home section start -->
-  <div class="hero">
-    <picture>
-      <source media="(min-width: 697px)" 
-              srcset="/images/ist2-1116.webp"
-              type="image/webp"
-              width="1116" 
-              height="558"
-              fetchpriority="highest">
-      <img src="/images/ist2-696.webp" 
-           width="696"
-           height="348"
-           fetchpriority="highest"
-           decoding="sync"
-           importance="high"
-           loading="eager"
-           alt="Ankara KVKK Avukatı">
-    </picture>
-    <div class="text-overlay">
-      <h1><strong>ACU Hukuk ve Danışmanlık</strong></h1>
-      <p class="h5">ACU Hukuk ve Danışmanlık avukatları olarak, müvekkillerimizin ihtiyaçları doğrultusunda en
-        hızlı ve etkili çözümleri üretiyoruz.</p>
-      <p class="h5">Müvekkillerimizin KVKK Uyum ve Danışmanlık süreçlerini A'dan Z'ye uzman avukatlarımızla
-        yürütüyoruz.</p>
-      <a href="/iletişim/" class="btn btn-primary">Bizimle İletişime Geçin</a>
+  <div class="hero-container">
+    <div class="hero">
+      <picture>
+        <source media="(min-width: 697px)" 
+                srcset="/images/ist2-1116.avif"
+                type="image/avif"
+                width="1116" 
+                height="558"
+                fetchpriority="highest">
+        <source media="(min-width: 697px)" 
+                srcset="/images/ist2-1116.webp"
+                type="image/webp"
+                width="1116" 
+                height="558">
+        <source media="(max-width: 696px)" 
+                srcset="/images/ist2-696.avif"
+                type="image/avif"
+                width="696"
+                height="348"
+                fetchpriority="highest">
+        <source media="(max-width: 696px)" 
+                srcset="/images/ist2-696.webp"
+                type="image/webp"
+                width="696"
+                height="348">
+        <img src="/images/ist2-696.jpg" 
+             width="696"
+             height="348"
+             fetchpriority="highest"
+             decoding="sync"
+             loading="eager"
+             alt="Ankara KVKK Avukatı"
+             style="aspect-ratio: 2/1;">
+      </picture>
+      <div class="text-overlay">
+        <h1><strong>ACU Hukuk ve Danışmanlık</strong></h1>
+        <p class="h5">ACU Hukuk ve Danışmanlık avukatları olarak, müvekkillerimizin ihtiyaçları doğrultusunda en
+          hızlı ve etkili çözümleri üretiyoruz.</p>
+        <p class="h5">Müvekkillerimizin KVKK Uyum ve Danışmanlık süreçlerini A'dan Z'ye uzman avukatlarımızla
+          yürütüyoruz.</p>
+        <a href="/iletişim/" class="btn btn-primary">Bizimle İletişime Geçin</a>
+      </div>
     </div>
   </div>
   <!-- Home section end -->
   <!-- hizmetlerimiz section start -->
-  <h5 class="heading">Hizmetlerimiz</h4>
-  <div class="container text-center " id="hizmetlerimiz">
-    <div class="row m-auto   ">
+  <h5 class="heading">Hizmetlerimiz</h5>
+  <div class="container text-center" id="hizmetlerimiz">
+    <div class="row m-auto">
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/kvkk-avukat.webp" class="card-img-top img-fluid" width="288" height="288" loading="lazy" alt="Ankara KVKK Avukat">
+          <img src="/images/kvkk-avukat.webp" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara KVKK Avukat">
           <div class="card-body">
             <h5 class="card-title text-center">KVKK Uyum Süreci</h5>
             <p class="card-text ">6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında uyum süreçlerinizi
@@ -302,7 +380,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/kvkk-eğitim.webp" class="card-img-top img-fluid" width="288" height="288" loading="lazy" alt="Ankara KVKK Avukat">
+          <img src="/images/kvkk-eğitim.webp" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara KVKK Avukat">
           <div class="card-body">
             <h5 class="card-title text-center">KVKK EĞİTİMİ</h5>
             <p class="card-text">KVKK kapsamında temel eğitim, personelleriniz ve şirket yöneticilerinizin bilgi
@@ -317,7 +400,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/ceza-avukat.webp" class="card-img-top img-fluid" width="288" height="288" loading="lazy" alt="Ankara Ceza Avukatı">
+          <img src="/images/ceza-avukat.webp" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara Ceza Avukatı">
           <div class="card-body">
             <h5 class="card-title text-center">Ceza Davaları</h5>
             <p class="card-text">Müvekkillerimizi, atılı suçlamalara karşı ceza davalarında en etkili savunmayı sunarak
@@ -332,8 +420,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/aile-avukat.webp" class="card-img-top img-fluid" width="288" height="288" loading="lazy"
-            alt="Ankara Boşanma Avukatı">
+          <img src="/images/aile-avukat.webp" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara Boşanma Avukatı">
           <div class="card-body">
             <h5 class="card-title text-center">Boşanma Davaları</h5>
             <p class="card-text ">Boşanma süreci, hukuki açıdan karmaşık olabilmektedir. Müvekkillerimizin haklarını
@@ -351,12 +443,16 @@
   <!-- hizmetlerimiz section end -->
   <!-- makaleler section start -->
   <h1 class="heading">Makaleler</h1>
-  <div class="container text-center " id="hizmetlerimiz">
-    <div class="row m-auto   ">
+  <div class="container text-center" id="hizmetlerimiz">
+    <div class="row m-auto">
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/tüketim.jpg" class="card-img-top img-fluid" width="288" height="288" loading="lazy"
-            alt="Ankara Bilişim Hukuku Avukat">
+          <img src="/images/tüketim.jpg" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara Bilişim Hukuku Avukat">
           <div class="card-body">
             <h5 class="card-title text-align-center">Tüketim Toplumunda Bilişim</h5>
             <p class="card-text">Küreselleşme ve teknolojinin gelişimi, mekânsal farklılaşmayı tetiklemiş, bu da
@@ -369,8 +465,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/yapay-zeka.jpg" class="card-img-top img-fluid" width="288" height="288" loading="lazy"
-            alt="Ankara Yapay Zeka Avukat">
+          <img src="/images/yapay-zeka.jpg" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara Yapay Zeka Avukat">
           <div class="card-body">
             <h5 class="card-title text-align-center">Yapay Zeka ve Hukuk Sistemi</h5>
             <p class="card-text"> Yapay zeka teknolojileri, öğrenme yeteneği kazandırmakla kalmayıp, hukuk sistemlerinde
@@ -383,8 +483,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/bilisim.jpg" class="card-img-top img-fluid" width="288" height="288" loading="lazy"
-            alt="Ankara Telekomünikasyon Avukatı">
+          <img src="/images/bilisim.jpg" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara Telekomünikasyon Avukatı">
           <div class="card-body">
             <h5 class="card-title text-align-center">Telekomünikasyon İletişiminin Denetimi</h5>
             <p class="card-text">Telekomünikasyon aracılığıyla yapılan iletişimin, hem suç önleme hem de soruşturma
@@ -398,7 +502,12 @@
       </div>
       <div class="col-12 col-md-auto">
         <div class="card m-auto" style="width: 18rem;">
-          <img src="/images/hm.jpg" class="card-img-top img-fluid" width="288" height="288" loading="lazy" alt="Ankara GDPR Avukat">
+          <img src="/images/hm.jpg" 
+               class="card-img-top img-fluid" 
+               width="288" 
+               height="288" 
+               loading="lazy" 
+               alt="Ankara GDPR Avukat">
           <div class="card-body">
             <h5 class="card-title text-align-center">H&M ve Veri Koruma İhlali</h5>
             <p class="card-text ">İsveçli hazır giyim markası H&M, çalışanlarını yasa dışı yollarla izlediği için
@@ -471,21 +580,42 @@
     </div>
   </section>
   <!-- footer section end -->
-  <!-- JavaScript yüklemeleri -->
+  <!-- JavaScript Optimizasyonu -->
   <script>
-    // Sayfa yüklendikten sonra JS'leri yükle
     window.addEventListener('load', function() {
-      // Bootstrap JS'i yükle
+      // Bootstrap JS'i asenkron yükle
       var bootstrap = document.createElement('script');
       bootstrap.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
       bootstrap.async = true;
+      bootstrap.defer = true;
       document.body.appendChild(bootstrap);
       
-      // Özel script'i yükle
+      // Özel script'i asenkron yükle
       var customScript = document.createElement('script');
       customScript.src = '/script.js';
       customScript.async = true;
+      customScript.defer = true;
       document.body.appendChild(customScript);
+
+      // Görüntü lazy loading için IntersectionObserver
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+              }
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      }
     });
   </script>
 </body>
