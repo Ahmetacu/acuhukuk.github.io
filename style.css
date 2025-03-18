@@ -2,26 +2,20 @@
 .lazy {
     opacity: 0;
     transition: opacity 0.3s ease-in;
-  }
+}
   
-  .lazy-loaded {
+.lazy-loaded {
     opacity: 1;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: "url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap')";
-    font-display: swap;
-  }
-  
-
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body, .poppins-thin, .poppins-light, .poppins-regular, .poppins-medium, .poppins-semibold {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 .poppins-thin { font-weight: 100; }
@@ -262,13 +256,20 @@ border: black;
 .btn {
     background-color: #384782;
     border-color: #384782;
-    
+    cursor: pointer !important;
 }
 .btn:hover {
     background-color: #090a29;
-    border-color:#090a29
+    border-color:#090a29;
+    cursor: pointer !important;
 }
 
+/* Daha spesifik seçici ekliyorum */
+.btn.btn-primary,
+a.btn.btn-primary,
+button.btn.btn-primary {
+    cursor: pointer !important;
+}
 
 .hizmetlerimiz p {
     text-align: center;
