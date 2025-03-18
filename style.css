@@ -336,6 +336,17 @@ button.btn.btn-primary {
     padding: 0.5rem;
 }
 
+.whatsapp-container .whatsapp {
+    font-size: 24px;
+    color: #25D366 !important;
+    text-decoration: none;
+    display: block;
+}
+
+.whatsapp-container .whatsapp:hover {
+    color: #128C7E !important;
+}
+
 /* form css */
 
 iframe {
