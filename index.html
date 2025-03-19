@@ -54,28 +54,55 @@
   <link rel="manifest" href="/images/site.webmanifest">
   
   <!-- Font Optimizasyonu -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/css/fonts/Poppins-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('/css/fonts/Poppins-Medium.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('/css/fonts/Poppins-SemiBold.ttf') format('truetype');
+    }
+  </style>
   
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/all.min.css" media="print" onload="this.media='all'">
   
+  <!-- Bootstrap CSS'i asenkron yükle -->
+  <link rel="stylesheet" 
+        href="/css/bootstrap/bootstrap.min.css" 
+        media="print" 
+        onload="this.media='all'" 
+        fetchpriority="low">
+  
+  <!-- Diğer CSS'i asenkron yükle -->
+  <link rel="stylesheet" 
+        href="/style.css" 
+        media="print" 
+        onload="this.media='all'" 
+        fetchpriority="low">
+
   <!-- Kritik CSS -->
   <style>
     :root {
       --hero-height-desktop: 558px;
       --hero-height-mobile: 348px;
       --primary-color: #384782;
-    }
-    
-    /* Font fallback */
-    @font-face {
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Arial');
     }
     
     body {
@@ -93,12 +120,14 @@
       overflow: hidden;
       background: var(--primary-color);
       contain: strict;
+      aspect-ratio: 2/1;
     }
     
     @media (max-width: 696px) {
       .hero-container {
         height: var(--hero-height-mobile);
         min-height: var(--hero-height-mobile);
+        aspect-ratio: 2/1;
       }
     }
     
@@ -139,12 +168,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      color: #fff;
+      color: #384782;
       z-index: 1;
       width: min(90%, 1000px);
       padding: 2rem;
-      pointer-events: none;
-      
     }
     
     .text-overlay h1 {
@@ -192,7 +219,6 @@
     .btn-primary:hover {
       background: #fff;
       color: var(--primary-color);
-
     }
     
     /* Navbar temel stilleri */
@@ -221,20 +247,6 @@
       background: #f0f0f0;
     }
   </style>
-
-  <!-- Bootstrap CSS'i asenkron yükle -->
-  <link rel="stylesheet" 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-        media="print" 
-        onload="this.media='all'" 
-        fetchpriority="low">
-  
-  <!-- Diğer CSS'i asenkron yükle -->
-  <link rel="stylesheet" 
-        href="/style.css" 
-        media="print" 
-        onload="this.media='all'" 
-        fetchpriority="low">
 </head>
 
 <body>
@@ -313,23 +325,27 @@
                 type="image/avif"
                 width="1116" 
                 height="558"
-                fetchpriority="highest">
+                fetchpriority="highest"
+                loading="eager">
         <source media="(min-width: 697px)" 
                 srcset="/images/ist2-1116.webp"
                 type="image/webp"
                 width="1116" 
-                height="558">
+                height="558"
+                loading="eager">
         <source media="(max-width: 696px)" 
                 srcset="/images/ist2-696.avif"
                 type="image/avif"
                 width="696"
                 height="348"
-                fetchpriority="highest">
+                fetchpriority="highest"
+                loading="eager">
         <source media="(max-width: 696px)" 
                 srcset="/images/ist2-696.webp"
                 type="image/webp"
                 width="696"
-                height="348">
+                height="348"
+                loading="eager">
         <img src="/images/ist2-696.jpg" 
              width="696"
              height="348"
@@ -337,7 +353,8 @@
              decoding="sync"
              loading="eager"
              alt="Ankara KVKK Avukatı"
-             style="aspect-ratio: 2/1;">
+             style="aspect-ratio: 2/1;"
+             importance="high">
       </picture>
       <div class="text-overlay">
         <h1>ACU Hukuk ve Danışmanlık</h1>
@@ -345,7 +362,7 @@
           hızlı ve etkili çözümleri üretiyoruz.</p>
         <p class="h5">Müvekkillerimizin KVKK Uyum ve Danışmanlık süreçlerini A'dan Z'ye uzman avukatlarımızla
           yürütüyoruz.</p>
-        <a href="/iletişim/" class="btn btn-primary">Bizimle İletişime Geçin</a>
+        <a href="/iletişim/" class="btn btn-primary" style="position: relative; z-index: 2;">Bizimle İletişime Geçin</a>
       </div>
     </div>
   </div>
@@ -581,7 +598,7 @@
     window.addEventListener('load', function() {
       // Bootstrap JS'i asenkron yükle
       var bootstrap = document.createElement('script');
-      bootstrap.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+      bootstrap.src = '/css/bootstrap/bootstrap.bundle.min.js';
       bootstrap.async = true;
       bootstrap.defer = true;
       document.body.appendChild(bootstrap);
@@ -606,12 +623,23 @@
               imageObserver.unobserve(img);
             }
           });
+        }, {
+          rootMargin: '50px 0px',
+          threshold: 0.1
         });
 
         document.querySelectorAll('img[loading="lazy"]').forEach(img => {
           imageObserver.observe(img);
         });
       }
+
+      // Back/forward cache için
+      window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+          // Sayfa back/forward cache'den yüklendiğinde
+          window.location.reload();
+        }
+      });
     });
   </script>
 </body>
