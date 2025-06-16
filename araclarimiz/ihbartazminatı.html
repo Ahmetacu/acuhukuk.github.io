@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords"
-    content="Araç Değer Kaybı Hesaplama, Araç Değer Kaybı Nasıl Hesaplanır, Araç Değer Kaybı Hesaplama Robotu, Araç Değer Kaybı Hesaplama Motoru">
+    content="ihbar tazminatı hesaplama, ihbar süresi, işten çıkarılma, iş hukuku, işçi hakları, kıdem tazminatı, brüt maaş, ihbar haftası">
   <meta name="DC.title" content="ACU Hukuk Bürosu | Ankara Avukat Danışmanlık">
-  <title>Araç Değer Kaybı Hesaplama Aracı</title>
+  <title>İhbar Tazminatı Hesaplama Aracı</title>
   <meta name="description"
-    content="Araç değer kaybı, bir aracın trafik kazası sonrası piyasa değerindeki düşüşü ifade eder. Bu değer kaybı, kazadan önceki piyasa değeri ile kazadan sonraki piyasa değeri arasındaki farktır. ">
+    content="İhbar tazminatınızı kolayca hesaplayın. İşe başlama ve çıkış tarihinizi, maaşınızı girerek ne kadar ihbar tazminatı alabileceğinizi öğrenin. ">
   <link rel="canonical" href="https://acuhukuk.av.tr">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -21,13 +21,13 @@
   <meta property="og:url" content="https://acuhukuk.av.tr">
   <meta property="og:title" content="ACU Hukuk Bürosu | Ankara Avukat">
   <meta property="og:description"
-    content="Araç değer kaybı, bir aracın trafik kazası sonrası piyasa değerindeki düşüşü ifade eder. Bu değer kaybı, kazadan önceki piyasa değeri ile kazadan sonraki piyasa değeri arasındaki farktır. ">
+    content="İhbar tazminatınızı kolayca hesaplayın. İşe başlama ve çıkış tarihinizi, maaşınızı girerek ne kadar ihbar tazminatı alabileceğinizi öğrenin. ">
   <meta property="og:image" content="https://acuhukuk.av.tr/images/social-share.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://acuhukuk.av.tr">
   <meta name="twitter:title" content="ACU Hukuk Bürosu | Ankara Avukat">
   <meta name="twitter:description"
-    content="Araç değer kaybı, bir aracın trafik kazası sonrası piyasa değerindeki düşüşü ifade eder. Bu değer kaybı, kazadan önceki piyasa değeri ile kazadan sonraki piyasa değeri arasındaki farktır. ">
+    content="İhbar tazminatınızı kolayca hesaplayın. İşe başlama ve çıkış tarihinizi, maaşınızı girerek ne kadar ihbar tazminatı alabileceğinizi öğrenin. ">
   <meta name="twitter:image" content="https://acuhukuk.av.tr/images/social-share.jpg">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,9 +56,8 @@
   <link rel="stylesheet" href="/css/fontawesome/all.min.css">
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-  <!-- Navbar section start -->
+      <!-- Navbar section start -->
   <nav class="navbar navbar-expand-lg" style="background-color: #fff;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
@@ -106,8 +105,8 @@
               Hesaplama Araçları
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" aria-current="page" href="/araçlarımız/aracdegerkaybihesaplama.html">Araç Değer Kaybı Hesaplama</a></li>
-              <li><a class="dropdown-item "  href="/araçlarımız/ihbartazminatı.html">İhbar Tazminatı</a></li>
+              <li><a class="dropdown-item" href="/araclarimiz/aracdegerkaybihesaplama.html">Araç Değer Kaybı Hesaplama</a></li>
+              <li><a class="dropdown-item active" aria-current="page" href="/araclarimiz/ihbartazminatı.html">İhbar Tazminatı</a></li>
             </ul>
           </li>
  
@@ -136,133 +135,100 @@
   </div>
   <!-- bilgi al section end -->
   <!-- Navbar section end -->
-
-
-  <!-- Araç Değer Kaybı Hesaplama Aracı -->
-  <article class="aracmakale"><h2 class="text-center">Önemli Bilgilendirme</h2>
-    <p>Hesaplama motorlarımız tahmini sonuçları ortaya çıkartmaktadır. Araç değer kaybının hesaplanmasında aracın hasar gören parçaları, bu parçaların daha önce işlem görüp görmediği, hasarları parçaların onarımla düzeltilip düzeltilemeyeceği, plastik aksam olup olmaması gibi husular önem arz etmektedir. Gerçek sonuçların hesaplanmasında yargı merciilerinin atayacağı bilirkişilerin hazırlayacağı raporlar daha doğru sonuç verecektir. Hukuk büromuz herhangi bir sonuç garanti etmemektedir. Hesaplamalardan kaynaklı sorumluluk tamamen size aittir. <br> </p></article>
-<div class="arac">
-  <h1>Araç Değer Kaybı Hesaplama</h1>
-        <label for="age">Araç Yaşı:</label>
-        <select id="age">
-            <option value="0.9">0-3 Yaş</option>
-            <option value="0.8">4-10 Yaş</option>
-            <option value="0.6">11-15 Yaş</option>
-        </select>
-
-        <label for="marketValue">Kaza Tarihindeki Piyasa Değeri (₺):</label>
-        <input type="number" id="marketValue" placeholder="Örn: 200000" oninput="formatInput(this)" />
-
-        <label for="mileage">Araç Kilometresi:</label>
-        <select id="mileage">
-            <option value="1">0-150,000 km</option>
-            <option value="0.9">150,001-200,000 km</option>
-            <option value="0.8">200,001-300,000 km</option>
-        </select>
-
-        <label for="damageRatio">Kaza Hasar Oranı (%):</label>
-        <input type="number" id="damageRatio" placeholder="Örn: 20" />
-
-        <button onclick="calculateDepreciation()">Hesapla</button>
-
-        <div id="result" class="result" style="display: none;"></div>
-</div>
-<!-- araç değer Kaybı Hesaplama Makalesi -->
-
-<h1 class="heading">Araç Değer Kaybı Hesaplama</h1>
-<article class="aracmakale">
-  
-  <h2 >Araç Değer Kaybı Nedir?</h2>
-  <p>Araç değer kaybı, bir aracın trafik kazası sonrası piyasa değerindeki düşüşü ifade eder. Bu değer kaybı, kazadan önceki piyasa değeri ile kazadan sonraki piyasa değeri arasındaki farktır. Kaza sonrasında araç en iyi şekilde tamir edilmiş olsa bile, TRAMER (Trafik Sigortaları Bilgi Merkezi) kayıtlarında yer alan kaza bilgisi nedeniyle aracın piyasa değeri düşer. Araç sahipleri, kazada kusursuz ya da az kusurlu iseler, bu değer kaybını karşı taraftan veya kendi sigorta poliçelerinden talep edebilirler.</p>
-  <h2 >Araç Değer Kaybı Hesaplama Yöntemi</h2>
-  <p>Araç değer kaybının hesaplanması için belirli kriterler ve formüller kullanılır. Şunu unutmamak gerekir ki bu araç değer kaybı hesabı araçta kullanılan parçaların orjinal olup olmamasından aracın hangi parçalarının tamir gördüğüne göre değişkenlik gösterebilecektir. Bu sebeple yukarıdaki hesaplama aracı kesin doğru cevapları vermeyecek sadece tahmini bir değer belirlemede sizlere yardımıcı olacaktır. Hukuk Genel olarak, hesaplama şu adımları içerir:
-    <br>
-    <ol>
-      <li> <b>Piyasa Değeri Belirleme: </b>Kazadan önceki aracın rayiç değeri tespit edilir.</li>
-      <li><b>Hasar Boyutu: </b> Kazada meydana gelen hasarın büyüklüğü değerlendirilir.</li>
-      <li><b>Kilometre Durumu: </b> Aracın kilometresi de hesaplamada önemli bir faktördür</li>
-    </ol>
-  </p>
-  <h2 >Hesaplama Formülü</h2>
-  <p>
-    Araç değer kaybı hesaplama formülü şu şekildedir: <br>
-    Baz Değer Kaybı =Aracın Rayiç Değeri × 0.019 <br>
-Total Değer Kaybı = Baz Değer Kaybı × Hasar Boyutlu Katsayısı × Araç Kullanılmışlık Düzeyi Km Katsayısı <br>
-  </p>
-  <h2 >Hasar Boyutlu Katsayılar</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Hasar Boyutu</th>
-        <th scope="col">Katsayı</th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Büyük Hasar</th>
-        <td>0.90</td>
-
-      </tr>
-      <tr>
-        <th scope="row">Orta Hasar</th>
-        <td>0.75</td>
-      </tr>
-      <tr>
-        <th scope="row">Küçük Hasar</th>
-        <td colspan="2">0.50</td>
-      </tr>
-      <tr>
-        <th scope="row">Basit Hasar</th>
-        <td>0.25</td>
-      </tr>
-    </tbody>
-  </table>
-  <h2>Kullanılmışlık Düzeyi Katsayıları</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Kilometre Aralığı</th>
-        <th scope="col">Katsayı</th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">0 – 14.999 km</th>
-        <td>0.90</td>
-
-      </tr>
-      <tr>
-        <th scope="row">15.000 – 29.999 km</th>
-        <td>0.80</td>
-      </tr>
-      <tr>
-        <th scope="row">30.000 – 44.999 km</th>
-        <td colspan="2">0.60</td>
-      </tr>
-      <tr>
-        <th scope="row">45.000 – 59.999 km</th>
-        <td>0.40</td>
-      </tr>
-      <tr>
-        <th scope="row">60.000 – 74.999 km</th>
-        <td>0.30</td>
-      </tr>
-      <tr>
-        <th scope="row">75.000 – 149.999 km</th>
-        <td>0.20</td>
-      </tr>
-      <tr>
-        <th scope="row">150.000 km ve üzeri</th>
-        <td>0.10</td>
-      </tr>
-    </tbody>
-  </table>
-
+   <!-- Bilgi Notu -->
+     <article class="aracmakale"><h2 class="text-center">Önemli Bilgilendirme</h2>
+    <p>Bu hesaplama aracı, ihbar tazminatı ile ilgili olarak yalnızca genel ve bilgilendirme amaçlı tahmini sonuçlar sunmaktadır. Hesaplama, kullanıcı tarafından girilen işe başlama ve işten çıkış tarihleri ile aylık brüt ücret gibi temel veriler esas alınarak yapılmaktadır. <br>
  
-</article>
+Gerçek hesaplamalar; iş sözleşmesinin türü, fesih şekli, varsa toplu iş sözleşmesi hükümleri, işverenin uygulamaları gibi çok sayıda hukuki ve fiili unsur dikkate alınarak, uzman kişiler veya mahkemeler tarafından atanan bilirkişiler aracılığıyla yapılmalıdır. <br>
 
+Bu aracın sağladığı sonuçlar hiçbir şekilde hukuki görüş veya garanti edilen hak anlamına gelmemektedir. Hukuk büromuz, bu hesaplama sonucuna dayanılarak alınacak kararlardan veya doğabilecek sonuçlardan sorumluluk kabul etmemektedir. <br> </p></article>    
+<!-- İhbar Tazminatı Hesaplama Aracı -->
+ <div class="container my-5">
+    <div class="card shadow p-4">
+      <h1 class="text-center mb-4">İhbar Tazminatı Hesaplama</h1>
+      <form id="calcForm">
+        <div class="mb-3">
+          <label for="startDate" class="form-label">İşe Başlama Tarihi</label>
+          <input type="date" id="startDate" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="endDate" class="form-label">İşten Çıkış Tarihi</label>
+          <input type="date" id="endDate" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="grossSalary" class="form-label">Aylık Brüt Ücret (TL)</label>
+          <input type="number" id="grossSalary" class="form-control" min="0" step="0.01" required>
+        </div>
+        <div class="mb-3">
+          <label for="allowance" class="form-label">Düzenli Ek Ödemeler (Yemek, yol vb.) (TL / Ay, isteğe bağlı)</label>
+          <input type="number" id="allowance" class="form-control" min="0" step="0.01" value="0">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Hesapla</button>
+      </form>
+
+      <div class="result mt-4 alert alert-info" id="resultBox">
+        <p><strong>Kıdem Süresi:</strong> <span id="seniorityText"></span></p>
+        <p><strong>İhbar Süresi:</strong> <span id="noticeText"></span></p>
+        <p><strong>Ödenecek İhbar Tazminatı:</strong> <span id="compText"></span> TL</p>
+      </div>
+
+      <footer class="mt-4 text-muted small">
+        Bu araç 4857 sayılı İş Kanunu'nun 17. maddesine göre hazırlanan basitleştirilmiş bir hesaplama sunar. Kesin tutarlar için profesyonel destek alınız.
+      </footer>
+  </div>
+
+
+  <!-- İhbar Tazminatı Hesaplama Aracı -->
+   <!-- MAkale -->
+    <!-- İhbar Tazminatı Bilgilendirme Makalesi -->
+<article class="aracmakale mt-5">
+  <h2 class="text-center">İhbar Tazminatı Nedir?</h2>
+  <p>
+    İhbar tazminatı, iş sözleşmesinin işveren tarafından veya işçi tarafından haklı bir neden olmadan feshedilmesi durumunda, karşı tarafa belirli bir süre önceden haber verilmediğinde ödenmesi gereken bir tazminat türüdür. 4857 sayılı İş Kanunu'nun 17. maddesi çerçevesinde düzenlenmiştir.
+  </p>
+
+  <h2 class="mt-4">İhbar Süreleri Nelerdir?</h2>
+  <p>
+    İş Kanunu’na göre iş sözleşmesi feshedilmeden önce taraflar arasında aşağıdaki sürelerde bildirimde bulunulması gerekir:
+  </p>
+  <ul>
+    <li>6 aydan az çalışmış işçi için <strong>2 hafta</strong></li>
+    <li>6 ay – 1.5 yıl arasında çalışmış işçi için <strong>4 hafta</strong></li>
+    <li>1.5 – 3 yıl arasında çalışmış işçi için <strong>6 hafta</strong></li>
+    <li>3 yıldan fazla çalışmış işçi için <strong>8 hafta</strong></li>
+  </ul>
+
+  <h2 class="mt-4">İhbar Tazminatı Nasıl Hesaplanır?</h2>
+  <p>
+    İhbar tazminatı hesaplamasında çalışanın <strong>giydirilmiş brüt ücreti</strong> dikkate alınır. Bu ücret; aylık brüt maaşın yanı sıra düzenli ödenen yol, yemek, prim gibi ek ödemeleri de içerir. Hesaplama şu formülle yapılır:
+  </p>
+  <p class="text-center">
+    <strong>İhbar Tazminatı = Giydirilmiş Günlük Ücret × İhbar Süresi (gün olarak)</strong>
+  </p>
+  <p>
+    Giydirilmiş günlük ücret genellikle 30 güne bölünerek aylık toplam brüt ücretten elde edilir. Örneğin; brüt maaşı 20.000 TL olan bir çalışana her ay 2.000 TL düzenli yol+yemek yardımı yapılıyorsa:
+  </p>
+  <ul>
+    <li>Aylık toplam = 22.000 TL</li>
+    <li>Günlük ücret = 22.000 / 30 = 733,33 TL</li>
+    <li>İhbar süresi 8 hafta = 56 gün → 733,33 × 56 = 41.066,48 TL</li>
+  </ul>
+
+  <h2 class="mt-4">Kimler İhbar Tazminatı Alabilir?</h2>
+  <p>
+    İhbar tazminatına hak kazanabilmek için iş sözleşmesinin haklı bir sebep olmadan sona erdirilmiş olması gerekir. Aşağıdaki durumlarda işçi veya işveren ihbar tazminatı ödemekle yükümlüdür:
+  </p>
+  <ul>
+    <li>İşverenin, işçiyi bildirim süresi vermeden işten çıkarması</li>
+    <li>İşçinin, işverene haber vermeden işi bırakması</li>
+  </ul>
+
+  <h2 class="mt-4">Önemli Not</h2>
+  <p class="text-muted">
+    Bu hesaplama aracı tahmini sonuçlar sunmaktadır. Gerçek tazminat tutarı, iş sözleşmesinin koşullarına, yargı mercilerinin takdirine ve varsa ek ödemelere göre farklılık gösterebilir. Hukuk büromuz bu araçla yapılan hesaplamaların sonucunu garanti etmez.
+  </p>
+</article>
+<!-- Makale -->
 
   <!-- faydalı linkler -->
   <h2 class="heading">Faydalı Linkler</h2>
@@ -324,4 +290,7 @@ Total Değer Kaybı = Baz Değer Kaybı × Hasar Boyutlu Katsayısı × Araç Ku
   <script src="/script.js" defer></script> 
 </body>
 
+</html>
+
+</body>
 </html>
