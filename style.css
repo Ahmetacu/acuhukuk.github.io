@@ -1,36 +1,204 @@
-/* Lazy-load sınıfı */
-.lazy {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-}
-  
-.lazy-loaded {
-    opacity: 1;
-}
-
+/* Temel Reset ve Font Tanımlamaları */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, .poppins-thin, .poppins-light, .poppins-regular, .poppins-medium, .poppins-semibold {
+body {
     font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-.poppins-thin { font-weight: 100; }
-.poppins-light { font-weight: 300; }
-.poppins-regular { font-weight: 400; }
-.poppins-medium { font-weight: 500; }
-.poppins-semibold { font-weight: 600; }
-
-.container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+/* Navbar Styles */
+.navbar {
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-nav img{
+.navbar img {
     height: 55px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.flex-container .whatsapp-link {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #090a29;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.footer .share a {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+
+.footer .share a:hover {
+    background-color: black;
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.footer .links a {
+    background-color: #384782;
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer .links a:hover,
+.footer .links a.active {
+    background-color: #172152;
+}
+
+.footer .haklar {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 200;
+    padding-top: 1rem;
+}
+
+/* Araç Değer Kaybı Hesaplama Formu */
+.arac {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.arac h1 {
+    color: #384782;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.arac label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #384782;
+}
+
+.arac input,
+.arac select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.arac button {
+    background-color: #384782;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.arac button:hover {
+    background-color: #172152;
+}
+
+.arac .result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Makale Stilleri */
+.aracmakale {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.aracmakale h2 {
+    color: #384782;
+    margin: 1.5rem 0 1rem;
+}
+
+.aracmakale p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Tablo Stilleri */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #384782;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .arac {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+    
+    .footer .links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer .links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Lazy Loading */
+.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.lazy-loaded {
+    opacity: 1;
 }
 
 /* Home Section Styles */
@@ -151,126 +319,6 @@ nav img{
     padding-right: 1rem;
 }
 
-
-/* Navbar Start */
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.flex-container .whatsapp-link {
-    margin-left: auto; /* Pushes the element to the far right */
-    margin-right:1rem ;
-}
-
-   /*Navbar End  */
-
-
-   /* footer start */
-.footer{
-    background-color:#090a29;
-    text-align: center;
-}
-
-.footer .share {
-    padding: 1rem 0;
-
-}
-.footer .share a {
-    width: 2.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    color: #fff;
-    font-size: 1rem;
-    border:#384782 ;
-    border-radius: 50%;
-    margin: 0rem;
-}
-.footer .share a:hover {
-    background-color: black;
-}
-.footer .links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    
-}
-.footer .links a {
-background-color: #384782;
-padding:0.7rem 2rem;
-color: #fff;
-font-size: 1rem;
-border: black;
-
-}
-.footer .links a:hover {
-    background-color: #384782;
-    
-    }
-    .footer .links a.active {
-        background-color: #172152;
-        }
-.footer .haklar {
-    font-size: 1rem;
-    color: #fff;
-    font-weight: 200;
-    padding-top: 0rem;
-}
-
-.footer .haklar span {
-    color:black
-}
-
-.footer .haklar i {
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
-    color: #fff;
-    font-size:1rem;
-    border:#fff ;
-    border-radius: 50%;
-    
-}
-
-
-.share {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .brand {
-    font-size: 24px; /* Logoların varsayılan yazı boyutu */
-    margin: 10px; /* Logolar arası boşluk */
-    transition: transform 0.3s; /* Geçiş efekti eklemek için kullanabilirsiniz */
-  }
-  
-  .brand:hover {
-    transform: scale(1.3); /* Logoyu 1.3 kat büyütme işlemi */
-  }
-  
-/* footer end */
-
-.btn {
-    background-color: #384782;
-    border-color: #384782;
-    cursor: pointer !important;
-}
-.btn:hover {
-    background-color: #090a29;
-    border-color:#090a29;
-    cursor: pointer !important;
-}
-
-/* Daha spesifik seçici ekliyorum */
-.btn.btn-primary,
-a.btn.btn-primary,
-button.btn.btn-primary {
-    cursor: pointer !important;
-}
-
 .hizmetlerimiz p {
     text-align: center;
 }
@@ -353,70 +401,24 @@ iframe {
     max-width: 100%;
 }
 
-/* Araçlar CSS */
+.btn {
+    background-color: #384782;
+    border-color: #384782;
+    cursor: pointer !important;
+}
+.btn:hover {
+    background-color: #090a29;
+    border-color:#090a29;
+    cursor: pointer !important;
+}
 
-  /* Araç Değer Kaybı Hesaplayıcı */
+/* Daha spesifik seçici ekliyorum */
+.btn.btn-primary,
+a.btn.btn-primary,
+button.btn.btn-primary {
+    cursor: pointer !important;
+}
 
-  
-  .arac {
-    max-width: 500px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .arac h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .arac .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .arac label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .arac input, select, button {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .arac  button {
-    background-color:  #384782;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .arac button:hover {
-    background-color: 0.1rem solid #384782;
-  }
-  
-  .arac .result {
-    margin-top: 20px;
-    padding: 10px;
-    background-color:  #586ec7;
-    border: 1px solid #384782;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .aracmakale {
-    margin-left: 5%;
-  }
-
-  .iletisimbutton {
+.iletisimbutton {
     margin-top: 5%;
   }

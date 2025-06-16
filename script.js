@@ -80,52 +80,50 @@ function initImagePreload() {
             imagePath = '/images/ist2-696.webp';
         } else if (width < 780) {
             imagePath = '/images/ist2-1116.webp';
-        } else if (width < 1000) {
-            imagePath = '/images/ist2-1392.webp';
-        } else if (width < 1200) {
-            imagePath = '/images/ist2-1650.webp';
-        } else if (width < 1400) {
-            imagePath = '/images/ist2-1872.webp';
         } else {
-            imagePath = '/images/ist2-2048.webp';
+            imagePath = '/images/ist2-1116.webp';
         }
         
         const img = new Image();
+        img.onerror = () => {
+            console.warn(`Görsel yüklenemedi: ${imagePath}`);
+            const fallbackPath = '/images/ist2-696.webp';
+            img.src = fallbackPath;
+        };
         img.src = imagePath;
-        return img.decode(); // Returns a promise
+        return img.decode().catch(error => {
+            console.warn(`Görsel kodlanamadı: ${imagePath}`, error);
+        });
     };
 
-    // Debounce the resize event
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            preloadImages().catch(console.error);
+            preloadImages();
         }, 250);
     });
 
-    // Initial load
-    preloadImages().catch(console.error);
+    preloadImages();
 }
   
 function preloadImage(imagePath) {
-    var img = new Image();
+    const img = new Image();
+    img.onerror = () => {
+        console.warn(`Görsel yüklenemedi: ${imagePath}`);
+        const fallbackPath = '/images/ist2-696.webp';
+        img.src = fallbackPath;
+    };
     img.src = imagePath;
 }
   
 function updateBackgroundPreload() {
     if (window.innerWidth < 580) {
-      preloadImage('/images/ist2-696.webp');
+        preloadImage('/images/ist2-696.webp');
     } else if (window.innerWidth < 780) {
-      preloadImage('/images/ist2-1116.webp');
-    } else if (window.innerWidth < 1000) {
-      preloadImage('/images/ist2-1392.webp');
-    } else if (window.innerWidth < 1200) {
-      preloadImage('/images/ist2-1650.webp');
-    } else if (window.innerWidth < 1400) {
-      preloadImage('/images/ist2-1872.webp');
+        preloadImage('/images/ist2-1116.webp');
     } else {
-      preloadImage('/images/ist2-2048.webp');
+        preloadImage('/images/ist2-1116.webp');
     }
 }
   
@@ -159,4 +157,60 @@ function calculateDepreciation() {
     resultDiv.style.display = 'block';
     resultDiv.innerHTML = `<strong>Hesaplanan Tahmini Değer Kaybı:</strong> ${formatCurrency(depreciation)}`;
 }
+// İHBAR TAZMİNATI HESAPLAMA
+  function diffInMonths(date1, date2) {
+      let years = date2.getFullYear() - date1.getFullYear();
+      let months = date2.getMonth() - date1.getMonth();
+      let days = date2.getDate() - date1.getDate();
 
+      if (days < 0) {
+        months--;
+        days += new Date(date2.getFullYear(), date2.getMonth(), 0).getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      return { years, months, days };
+    }
+
+    // Toplam çalışma süresine (ay) göre ihbar haftasını bul
+    function getNoticeWeeks(totalMonths) {
+      if (totalMonths < 6) return 2;      // 0-6 ay => 2 hafta
+      if (totalMonths < 18) return 4;     // 6-18 ay => 4 hafta (1.5 yıl)
+      if (totalMonths < 36) return 6;     // 18-36 ay => 6 hafta (3 yıl)
+      return 8;                           // 3 yıldan uzun => 8 hafta
+    }
+
+    document.getElementById('calcForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const start = new Date(document.getElementById('startDate').value);
+      const end = new Date(document.getElementById('endDate').value);
+
+      if (end <= start) {
+        alert('Çıkış tarihi, işe başlama tarihinden sonra olmalıdır.');
+        return;
+      }
+
+      const diff = diffInMonths(start, end);
+      const totalMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+
+      const noticeWeeks = getNoticeWeeks(totalMonths);
+      const noticeDays = noticeWeeks * 7;
+
+      const gross = parseFloat(document.getElementById('grossSalary').value) || 0;
+      const allowance = parseFloat(document.getElementById('allowance').value) || 0;
+      const monthly = gross + allowance;     // Giydirilmiş aylık ücret
+      const daily = monthly / 30;            // 30 günlük hesap
+      const comp = daily * noticeDays;       // İhbar tazminatı
+
+      document.getElementById('seniorityText').textContent = `${diff.years} yıl ${diff.months} ay ${diff.days} gün`;
+      document.getElementById('noticeText').textContent = `${noticeWeeks} hafta (${noticeDays} gün)`;
+      document.getElementById('compText').textContent = comp.toLocaleString('tr-TR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      document.getElementById('resultBox').style.display = 'block';
+    });
