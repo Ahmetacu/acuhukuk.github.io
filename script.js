@@ -214,3 +214,47 @@ function calculateDepreciation() {
 
       document.getElementById('resultBox').style.display = 'block';
     });
+
+    // KIDEM 
+
+  function calculateSeverance() {
+    const start = new Date(document.getElementById("startDate").value);
+    const end   = new Date(document.getElementById("endDate").value);
+    const salary = parseFloat(document.getElementById("salary").value);
+    const extra  = parseFloat(document.getElementById("extra").value) || 0; // ek ödemeler
+    const resultBox = document.getElementById("result");
+
+    // Temel doğrulama
+    if (!start || !end || isNaN(salary)) {
+      resultBox.className = "alert alert-danger mt-4";
+      resultBox.textContent = "Lütfen tüm alanları eksiksiz ve doğru doldurunuz.";
+      return;
+    }
+
+    // Tam yıl hesabı
+    const diffYears =
+      end.getFullYear() -
+      start.getFullYear() -
+      (end.getMonth() < start.getMonth() ||
+      (end.getMonth() === start.getMonth() && end.getDate() < start.getDate())
+        ? 1
+        : 0);
+
+    if (diffYears < 1) {
+      resultBox.className = "alert alert-warning mt-4";
+      resultBox.textContent =
+        "Kıdem tazminatı yalnızca en az 1 yıl çalışmış çalışanlar için hesaplanır.";
+      return;
+    }
+
+    // Giydirilmiş brüt ücret = maaş + ek ödemeler
+    const dressedWage = salary + extra;
+    const severancePay = dressedWage * diffYears;
+
+    resultBox.className = "alert alert-info mt-4";
+    resultBox.innerHTML = `
+      <strong>${diffYears}</strong> tam yıl çalışmaya karşılık<br>
+      Giydirilmiş brüt ücret: <strong>${dressedWage.toLocaleString('tr-TR')} TL</strong><br>
+      Ödenmesi gereken kıdem tazminatı: <strong>${severancePay.toLocaleString('tr-TR')} TL</strong>
+    `;
+  }
