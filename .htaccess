@@ -214,6 +214,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
 # Site bakım modu aktif - tüm istekleri index.html'e yönlendir (şimdi bakım sayfası)
-RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
-RewriteCond %{REMOTE_ADDR} !^::1$
 RewriteRule ^(.*)$ /index.html [R=503,L]
+
